@@ -2,10 +2,19 @@
 //
 
 #include "stdafx.h"
+#include "Recipe.h"
 
+
+
+void displayAll()
+{
+
+}
 
 int main()
 {
+	Recipe newRec("Cuba Libre");
+
     return 0;
 }
 
