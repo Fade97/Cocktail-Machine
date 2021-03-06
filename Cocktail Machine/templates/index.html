@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static',filename='support.js')}}"></script>
     <title>Cocktail Automat</title>
 </head>
-<body>
-    {%for ing in ingredients%}
-        <div class="ingredient">
-            {{ing.name}}<br>
-            {{ing.active}}<br>
-            {{ing.pump}}<br>
-        </div>
-    {% endfor %}
 
-    {%for rec in recipes%}
-        <div class="recipes" style="background-image: url({{rec.image}})">
-            {{rec.name}} ({{rec.totalAmount}}ml)<br>
-            {%for ing in rec.ingredients%}
-                &nbsp; {{ing[0].name}}: &nbsp; {{ing[1]}} ml<br>
-            {%endfor%}
+<body>
+    <!--
+
+        {%for ing in ingredients%}
+        <div class="ingredient fitin">
+            <div>
+                {{ ing.name }}<br>
+                {{ ing.active }}<br>
+                {{ ing.pump }}<br>
+            </div>
         </div>
-    {% endfor %}
+        {% endfor %}
+    -->
+    <div id="cocktails">
+
+        {%for rec in recipes%}
+        {% include "card.html"%}
+        <!--
+            <div class="recipes" style="background-image: url({{rec.image}})">
+                {{ rec.name }} ({{ rec.totalAmount }}ml)<br>
+                {%for ing in rec.ingredients%}
+                &nbsp; {{ ing[0].name }}: &nbsp; {{ ing[1]}} ml<br>
+                {% endfor %}
+            </div>
+        -->
+        {% endfor %}
+    </div>
 </body>
+
 </html>

@@ -61,7 +61,23 @@
                     "amount": 20
                 }
             ],
-            "image": "https://cdn.diffords.com/contrib/stock-images/2017/8/14/20175d18a2589e59962d8ff66e5e9703282f.jpg"
+            "image": "static/longIslandIcedTea.png"
+        },
+        {
+            "name": "Gin Tonic",
+            "ingredients": [
+                {
+                    "name": "Gin",
+                    "priority": 0,
+                    "amount": 20
+                },
+                {
+                    "name": "Zitronensaft",
+                    "priority": 0,
+                    "amount": 20
+                }
+            ],
+            "image": "static/ginTonic.png"
         }
     ]
 }

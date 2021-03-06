@@ -1,20 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root{
+    --bgCol: #282c39;
+    --bgLCol: #363e4b;
+    --bgHCol: #566174;
+}
+
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #f1f6fd
+}
+
+html{
+    background-color: var(--bgCol);
 }
 
 .ingredient{
     display: inline-block;
-    border: 1px solid #ff0000;
     width: 80px;
     height: 80px;
 }
 
-.recipes{
-    border: 1px solid #0000ff;
+#cocktails{
+    padding: 10px;
+}
+
+.recipe-card{
     width: 200px;
     height: 200px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    padding-top: 10px;
+    background-color: var(--bgLCol);
+    border-radius: 5px;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.recipe-card:last-child{
+    margin-right: 0;
+}
+
+.recipe-card-image{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 200px;
+    max-height: 170px;
+}
+
+.recipe-card .fitin{
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    background-color: var(--bgHCol);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.recipe-card-name {
 }
