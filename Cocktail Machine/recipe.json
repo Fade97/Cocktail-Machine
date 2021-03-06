@@ -1,0 +1,67 @@
+{
+    "ingredients": [
+        {
+            "name": "Cola",
+            "active": true,
+            "pump": 1
+        },
+        {
+            "name": "Wodka",
+            "active": false,
+            "pump": 0
+        },
+        {
+            "name": "Bacardy",
+            "active": false,
+            "pump": 0
+        }
+    ],
+    "recipes": [
+        {
+            "name": "Long Island Iced Tea",
+            "ingredients": [
+                {
+                    "name": "Cola",
+                    "priority": 1,
+                    "amount": 100
+                },
+                {
+                    "name": "Wodka",
+                    "priority": 0,
+                    "amount": 20
+                },
+                {
+                    "name": "Bacardi",
+                    "priority": 0,
+                    "amount": 20
+                },
+                {
+                    "name": "Tequila",
+                    "priority": 0,
+                    "amount": 20
+                },
+                {
+                    "name": "Triple Sec",
+                    "priority": 0,
+                    "amount": 20
+                },
+                {
+                    "name": "Gin",
+                    "priority": 0,
+                    "amount": 20
+                },
+                {
+                    "name": "Zuckersirup",
+                    "priority": 0,
+                    "amount": 10
+                },
+                {
+                    "name": "Zitronensaft",
+                    "priority": 0,
+                    "amount": 20
+                }
+            ],
+            "image": "https://cdn.diffords.com/contrib/stock-images/2017/8/14/20175d18a2589e59962d8ff66e5e9703282f.jpg"
+        }
+    ]
+}

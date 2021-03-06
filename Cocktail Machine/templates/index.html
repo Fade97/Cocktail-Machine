@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <title>Cocktail Automat</title>
+</head>
+<body>
+    {%for ing in ingredients%}
+        <div class="ingredient">
+            {{ing.name}}<br>
+            {{ing.active}}<br>
+            {{ing.pump}}<br>
+        </div>
+    {% endfor %}
+
+    {%for rec in recipes%}
+        <div class="recipes" style="background-image: url({{rec.image}})">
+            {{rec.name}} ({{rec.totalAmount}}ml)<br>
+            {%for ing in rec.ingredients%}
+                &nbsp; {{ing[0].name}}: &nbsp; {{ing[1]}} ml<br>
+            {%endfor%}
+        </div>
+    {% endfor %}
+</body>
+</html>
