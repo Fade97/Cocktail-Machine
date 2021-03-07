@@ -4,6 +4,7 @@ from os import fstat
 ingredientList = []
 recipeList = []
 
+
 class RecipeLoader:
     def __init__(self):
         return
@@ -15,24 +16,24 @@ class RecipeLoader:
                 ingredientList.append(Ingredient(jsonData=i))
             for r in self.jsonData['recipes']:
                 recipeList.append(Recipe(jsonData=r))
-    
+
     def saveRecipes(self):
         with open('recipe.json', 'w') as jsonFile:
             data = {
-                'ingredients':[
+                'ingredients': [
                     {
-                        "name": x.name, 
-                        "active":  x.active, 
+                        "name": x.name,
+                        "active":  x.active,
                         "pump": x.pump
                     } for x in ingredientList
-                ], 
-                'recipes':[
+                ],
+                'recipes': [
                     {
-                        "name": x.name, 
+                        "name": x.name,
                         "ingredients": [
                             {
-                                "name": y[0].name, 
-                                "priority": y[2], 
+                                "name": y[0].name,
+                                "priority": y[2],
                                 "amount": y[1]
                             } for y in x.ingredients
                         ],
@@ -42,6 +43,7 @@ class RecipeLoader:
             }
             print(json.dumps(data, indent=4))
             json.dump(data, jsonFile, indent=4)
+
 
 class Ingredient:
     def __init__(self, name='', active=False, pump=0, jsonData=None):
@@ -54,8 +56,9 @@ class Ingredient:
             self.active = jsonData['active']
             self.pump = jsonData['pump']
 
+
 class Recipe:
-    def __init__(self, name = '', jsonData=None):
+    def __init__(self, name='', jsonData=None):
         self.ingredients = []
         self.totalAmount = 0
         if jsonData == None:
@@ -66,7 +69,8 @@ class Recipe:
                 ing = [x for x in ingredientList if x.name == i['name']]
                 if len(ing) == 0:
                     ingredientList.append(Ingredient(i['name']))
-                self.ingredients.append([next(x for x in ingredientList if x.name == i['name']), i['amount'], i['priority']])
+                self.ingredients.append(
+                    [next(x for x in ingredientList if x.name == i['name']), i['amount'], i['priority']])
                 self.totalAmount += i['amount']
             self.image = str(jsonData['image'])
 
@@ -74,8 +78,9 @@ class Recipe:
         self.ingredients.append({ingredient, amount, priority})
         self.totalAmount += amount
 
+
 if __name__ == "__main__":
-    rl =RecipeLoader()
+    rl = RecipeLoader()
     rl.loadRecipes()
 
     for r in recipeList:
@@ -98,4 +103,4 @@ if __name__ == "__main__":
 
     print()
     print()
-    rl.saveRecipes()
+    # rl.saveRecipes()

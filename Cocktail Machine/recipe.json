@@ -14,6 +14,11 @@
             "name": "Bacardy",
             "active": false,
             "pump": 0
+        },
+        {
+            "name": "Tonic Water",
+            "active": false,
+            "pump": 0
         }
     ],
     "recipes": [
@@ -72,12 +77,22 @@
                     "amount": 20
                 },
                 {
-                    "name": "Zitronensaft",
+                    "name": "Tonic Water",
                     "priority": 0,
                     "amount": 20
                 }
             ],
             "image": "static/ginTonic.png"
+        },
+        {
+            "name": "Caipirinha",
+            "ingredients": [],
+            "image": "static/caipirinha.png"
+        },
+        {
+            "name": "Mojito",
+            "ingredients": [],
+            "image": "static/mojito.png"
         }
     ]
 }

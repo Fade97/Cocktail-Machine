@@ -1,0 +1,21 @@
+<div class="popup">
+    <div class="recipe-info">
+        <div class="left">
+            <img src="{{rec.image}}" />
+            <div class="background-l name-background">
+                <h2>{{rec.name}}</h2>
+            </div>
+        </div>
+        <div class="right">
+            <div class="ingredient-bar">
+            </div>
+            <ul>
+                {%for ing in rec.ingredients%}
+                <li>
+                    {{ ing[0].name }}: &nbsp; {{ ing[1]}} ml<br>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

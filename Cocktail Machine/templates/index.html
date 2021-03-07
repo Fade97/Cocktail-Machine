@@ -24,19 +24,10 @@
         </div>
         {% endfor %}
     -->
-    <div id="cocktails">
-
-        {%for rec in recipes%}
-        {% include "card.html"%}
-        <!--
-            <div class="recipes" style="background-image: url({{rec.image}})">
-                {{ rec.name }} ({{ rec.totalAmount }}ml)<br>
-                {%for ing in rec.ingredients%}
-                &nbsp; {{ ing[0].name }}: &nbsp; {{ ing[1]}} ml<br>
-                {% endfor %}
-            </div>
-        -->
-        {% endfor %}
+    <div id="content">
+        <div id="cocktails">
+            {% include "recipes.html" %}
+        </div>
     </div>
 </body>
 

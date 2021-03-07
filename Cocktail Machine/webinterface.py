@@ -11,4 +11,4 @@ def index():
 
 rl = RecipeLoader()
 rl.loadRecipes()
-app.run('0.0.0.0')
+app.run('0.0.0.0', debug=True)
